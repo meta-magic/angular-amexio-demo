@@ -1,0 +1,28 @@
+<h3>Inbuilt Pipe Demo</h3>
+<amexio-label size="medium-bold">
+    {{emp.name | uppercase}}
+</amexio-label>
+<br />
+<amexio-label size="medium-bold">
+    {{emp.empid | number}}
+</amexio-label>
+<br />
+<amexio-label size="medium-bold">
+    {{emp.salary | currency: 'INR'}}
+</amexio-label>
+<br />
+<amexio-label size="medium-bold">
+    {{emp.date | date:'dd MMM,yyyy' }}
+</amexio-label>
+<br />
+<amexio-label size="medium-bold">
+    {{emp.date | date:'dd MMM,yyyy' | lowercase}}
+</amexio-label>
+<hr>
+
+<h3>Custom Pipe Demo </h3>
+<amexio-text-input field-label="Search" name="filter" [(ngModel)]="filter"></amexio-text-input>
+
+<amexio-row *ngFor="let emp of employees | filter :'name': filter">
+    <amexio-column [size]="12">{{emp.name}}</amexio-column>
+</amexio-row>

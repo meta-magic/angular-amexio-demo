@@ -1,0 +1,62 @@
+<!--Property Binding -->
+<h3>Property Binding</h3>
+<img src="{{image}}" /> <br /> <!-- Angular when compiles translate this in property binding -->
+<img [src]="image" /> <br /> <!-- Property Binding -->
+
+<!-- User interpolation when you want to print text and property binding when you want to assign the value -->
+<amexio-label>{{title}}</amexio-label> <br />
+<amexio-label [textContent]="title"></amexio-label>
+
+<!-- 
+    Attribute binding 
+    Angular 2 attribute binding is required in those cases when HTML attribute has no corresponding DOM property. 
+    Find some differences between HTML attribute and DOM property. https://www.concretepage.com/angular-2/angular-2-attribute-binding-example
+-->
+
+<h3>Attribute Binding</h3>
+<table>
+    <tr>
+        <td [attr.colspan]="colspan"> {{colspan}}</td>
+    </tr>
+</table>
+
+<!-- Class Binding -->
+
+<h3>Class Binding</h3>
+<div class="success" [class.disabled]="disabled"> {{title}} </div> <br />
+<!-- Use ngClass When you need to have multiple class binding based on various conditions  -->
+<div [ngClass]="{'success': true, 'disabled' : !disabled}"> {{title}} </div> <br />
+
+
+
+<!-- Style Binding -->
+
+<h3>Style Binding</h3>
+<div style="background-color: black;" [style.color]="'white'"> {{title}}</div> <br />
+<!-- Use ngStyle When you need to have multiple class binding based on various conditions  -->
+<div [ngStyle]="{'background-color': true ? 'black':'white', 
+                 'color': true ? 'white':'black',
+                 'opacity':!disabled ? '0.10':null}">
+    {{title}}
+</div>
+<br />
+
+<!-- Event Binding -->
+<h3>Event Binding</h3>
+<button (click)="onClick($event)"> Click Me</button> <br>
+<div (click)="onDivClicked($event)">
+    <button (click)="onClick($event)"> Event Propagation </button>
+</div>
+Enter Key Filter: <input type="text" (keyup.enter)="onEventFilter('Enter Key')"> <br />
+Esc Key Filter: <input type="text" (keydown.esc)="onEventFilter('Esc Key')"> <br />
+9 Key Filter: <input type="text" (keyup.9)="onEventFilter('Enter 9')"> <br />
+Shift arrowdown Key Filter: <input type="text" (keydown.shift.arrowdown)="onEventFilter('Enter Shift arrowdown')"> <br />
+
+<!-- Template Refrence Variable -->
+
+<h3>Template Refrence Variable</h3>
+Template Refrence:<input #input type="text" (keyup.enter)="templateRef(input)"> <br />
+
+<!-- Twoway binding -->
+<h3>Twoway binding</h3>
+Two way binding:<input [(ngModel)]="title" type="text" (keyup.enter)="onEventFilter('Enter Key')"> <br />

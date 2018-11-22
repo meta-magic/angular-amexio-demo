@@ -1,0 +1,17 @@
+<amexio-label [size]="'large-bold'">{{title}}</amexio-label>
+
+<amexio-tab-view>
+    <amexio-tab title="1 Greetings" [active]="true">
+        <!-- Greetings Demo with life cycle hooks -->
+        <button (click)="onClick()">toggle</button> <br />
+        <greetings *ngIf="flag"></greetings> <br />
+    </amexio-tab>
+    <amexio-tab title="2 Binding">
+        <!-- Binding Demo with property binding -->
+        <binding></binding>
+    </amexio-tab>
+    <amexio-tab title="3 Pipe">
+        <!-- Pipe Example -->
+        <pipedemo></pipedemo>
+    </amexio-tab>
+</amexio-tab-view>

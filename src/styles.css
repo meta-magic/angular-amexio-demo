@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+
+.success {
+   background-color: black;
+   color: white;
+}
+
+.disabled {
+   opacity: 0.10;
+}
