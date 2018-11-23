@@ -1,0 +1,9 @@
+<table>
+    <tr class="rowstyle" *ngFor="let row of data" (click)="rowClick(row)">
+        <td *ngIf="!listtemplate">{{row[displayfield]}}</td>
+        <ng-container *ngIf="listtemplate">
+            <ng-template [ngTemplateOutlet]="listtemplate" [ngTemplateOutletContext]="{row:row}"></ng-template>
+        </ng-container>
+    </tr>
+</table>
+ 

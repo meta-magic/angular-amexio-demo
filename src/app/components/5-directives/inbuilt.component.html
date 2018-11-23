@@ -1,0 +1,30 @@
+<h4>If Demo 1</h4>
+<div *ngIf="flag; else elseTemplate">Inside IF</div>
+<ng-template #elseTemplate>Inside Else</ng-template>
+
+<h4>If Demo 2</h4>
+<div *ngIf="!flag; then ifblock else elseblock"></div>
+
+<ng-template #ifblock>Inside IF </ng-template>
+<ng-template #elseblock>Inside Else </ng-template>
+
+<h4> NG Switch </h4>
+<div [ngSwitch]="gender">
+    <div *ngSwitchCase="'1'"> Male </div>
+    <div *ngSwitchCase="'2'"> Female </div>
+    <div *ngSwitchCase="'3'"> Others </div>
+    <div *ngSwitchDefault> Human </div>
+</div>
+
+<h4> NG For</h4>
+<amexio-row *ngFor="let emp of employees;  index as i; first as isFirst; even as isEven; odd as isOdd; last as isLast">
+    <amexio-column [size]=2>{{i +' '+ emp['name']}}</amexio-column>
+    <amexio-column [size]=2>{{isFirst}}</amexio-column>
+    <amexio-column [size]=2>{{isEven}}</amexio-column>
+    <amexio-column [size]=2>{{isOdd}}</amexio-column>
+    <amexio-column [size]=2>{{isLast}}</amexio-column>
+    <amexio-column [size]=2>
+        <amexio-button [label]="'Update'" [type]="'theme-color'" (click)="updateRecord(emp)"></amexio-button>        
+    </amexio-column>
+</amexio-row>
+<amexio-button [label]="'Add'" [type]="'theme-color'" (click)="addRecord()"></amexio-button>
