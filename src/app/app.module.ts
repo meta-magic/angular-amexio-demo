@@ -9,6 +9,8 @@ import { PipeComponent } from './components/3-pipe/pipe.component';
 import { FilterPipe } from './components/3-pipe/filter.pipe';
 import { ListComponent } from './components/4-reusable-components/list.component';
 import { InbuiltComponent } from './components/5-directives/inbuilt.component';
+import { InputFormatDirective } from './components/5-directives/custom.directive';
+import { PhoneDirective } from './components/5-directives/phone.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,10 @@ import { InbuiltComponent } from './components/5-directives/inbuilt.component';
     PipeComponent,
     ListComponent,
     InbuiltComponent,
-    FilterPipe
+    FilterPipe,
+
+    InputFormatDirective,
+    PhoneDirective
   ],
   imports: [
     BrowserModule,

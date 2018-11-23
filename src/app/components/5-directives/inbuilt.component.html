@@ -28,3 +28,8 @@
     </amexio-column>
 </amexio-row>
 <amexio-button [label]="'Add'" [type]="'theme-color'" (click)="addRecord()"></amexio-button>
+
+<h5>Custom Directive</h5>
+<label>First Name {{name}}</label>
+<input type="text" phone-format [(ngModel)]="name" input-format='uppercase'/>
+ 

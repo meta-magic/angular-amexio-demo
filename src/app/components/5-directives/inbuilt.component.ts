@@ -12,7 +12,8 @@ export class InbuiltComponent {
 
     gender: string = "2";
 
-    
+    name : string;
+
     employees : Employee [];
 
     constructor(){
@@ -25,6 +26,11 @@ export class InbuiltComponent {
 
     updateRecord(emp : Employee){
         emp.name = emp.name + " - Updated ";
+    }
+
+    changeModel(value : any){
+        console.log('change model', value);
+        this.name = value;
     }
 
     addRecord(){
