@@ -1,17 +1,37 @@
 <amexio-label [size]="'large-bold'">{{title}}</amexio-label>
 
 <amexio-tab-view>
-    <amexio-tab title="1 Greetings" [active]="true">
+    <amexio-tab title="1 Greetings" [active]="false">
         <!-- Greetings Demo with life cycle hooks -->
+        <h3>Hello World with lifecycle hooks</h3>
         <button (click)="onClick()">toggle</button> <br />
         <greetings *ngIf="flag"></greetings> <br />
     </amexio-tab>
     <amexio-tab title="2 Binding">
         <!-- Binding Demo with property binding -->
+        <h3>Property/Attribute/Event Binding</h3>
         <binding></binding>
     </amexio-tab>
     <amexio-tab title="3 Pipe">
         <!-- Pipe Example -->
+        <h3>Inbuit and Custom Pipe</h3>
         <pipedemo></pipedemo>
+    </amexio-tab>
+    <amexio-tab  title="Reusable Component">
+        <h3>Reusable Components - Input and Output</h3>
+        <list-component (onClick)="onListClick($event)" [data]="employees" [display-field]="'name'">
+            <ng-template #listtemplate let-row="row">
+                {{ row['name'] | uppercase}}
+            </ng-template>
+        </list-component>
+        <div class="rowstyle">
+            <pre>
+            {{emp | json}}
+            </pre>
+        </div>
+    </amexio-tab>
+    <amexio-tab  title="Directive" [active]="true">
+        <h3>Inbuilt directives</h3>
+        <inbuilt-directive></inbuilt-directive>
     </amexio-tab>
 </amexio-tab-view>

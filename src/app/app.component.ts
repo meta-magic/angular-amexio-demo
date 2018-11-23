@@ -10,7 +10,37 @@ export class AppComponent {
 
   flag : boolean = true;
 
+  emp : Employee;
+  employees : Employee [];
+
+  constructor(){
+    this.employees = [];
+    this.employees.push(new Employee('Ketan Gote',201000,50000, new Date()));
+    this.employees.push(new Employee('Naitik Gote',201000,50000, new Date()));
+    this.employees.push(new Employee('Rekha Gote',201000,50000, new Date()));
+    this.employees.push(new Employee('Amol Gote',201000,50000, new Date()));
+  }
   onClick(){
     this.flag = !this.flag;
   }
+
+  onListClick(emp:Employee){
+    this.emp = emp;
+  }
+}
+
+class Employee {
+  name : string;
+  empid : number;
+  salary : number;
+  date :  Date;
+
+  constructor(name: string,empid:number, salary:number, date:Date){
+      this.name = name;
+      this.empid = empid;
+      this.salary = salary;
+      this.date = date;
+  }
+
+  
 }
