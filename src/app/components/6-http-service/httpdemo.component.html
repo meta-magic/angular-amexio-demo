@@ -1,0 +1,6 @@
+<label>User Posts</label>
+<input type="text" (keyup.enter)="createPost()" [(ngModel)]="postcontent"> 
+<br/>
+<pre>
+{{userposts|json}}
+</pre>

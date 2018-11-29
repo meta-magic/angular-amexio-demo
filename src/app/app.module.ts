@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { FormsModule } from '@angular/forms'
 import { AppComponent } from './app.component';
 import { AmexioWidgetModule } from 'amexio-ng-extensions';
@@ -11,6 +11,10 @@ import { ListComponent } from './components/4-reusable-components/list.component
 import { InbuiltComponent } from './components/5-directives/inbuilt.component';
 import { InputFormatDirective } from './components/5-directives/custom.directive';
 import { PhoneDirective } from './components/5-directives/phone.directive';
+import { HttpDemoComponent } from './components/6-http-service/httpdemo.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PostService } from './components/6-http-service/post.service';
+import { AppErrorHandler } from './errors/app.error.handler';
 
 @NgModule({
   declarations: [
@@ -21,17 +25,20 @@ import { PhoneDirective } from './components/5-directives/phone.directive';
     ListComponent,
     InbuiltComponent,
     FilterPipe,
-
+    HttpDemoComponent,
     InputFormatDirective,
     PhoneDirective
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AmexioWidgetModule
-    
+    AmexioWidgetModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    PostService,
+    { provide: ErrorHandler, useClass: AppErrorHandler }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
