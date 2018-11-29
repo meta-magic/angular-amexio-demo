@@ -19,10 +19,11 @@ import { RouteDemoComponent } from './components/7-routes/routedemo.component';
 import { RouteOneDemoComponent } from './components/7-routes/routeone.component';
 import { RouteTwoDemoComponent } from './components/7-routes/routetwo.component';
 import { Routes, RouterModule } from '@angular/router';
+import { RouteGaurd } from './components/7-routes/route.gaurd.component';
 
 
 const route: Routes = [{
-  path: 'routeone', component: RouteOneDemoComponent
+  path: 'routeone', component: RouteOneDemoComponent, canActivate : [RouteGaurd]
 }, {
   path: 'routetwo', component: RouteTwoDemoComponent , children :[
     {
