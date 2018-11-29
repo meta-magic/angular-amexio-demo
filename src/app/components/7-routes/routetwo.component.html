@@ -1,0 +1,5 @@
+Route Two <br/>
+<a [routerLink]="[{ outlets: { inner: ['innerrouteone'] } }]">One</a><br/>
+<a [routerLink]="[{ outlets: { inner1: ['innerroutetwo'] } }]">Two</a> <br/>
+<router-outlet name="inner"></router-outlet><br/>
+<router-outlet name="inner1"></router-outlet><br/>

@@ -15,6 +15,24 @@ import { HttpDemoComponent } from './components/6-http-service/httpdemo.componen
 import { HttpClientModule } from '@angular/common/http';
 import { PostService } from './components/6-http-service/post.service';
 import { AppErrorHandler } from './errors/app.error.handler';
+import { RouteDemoComponent } from './components/7-routes/routedemo.component';
+import { RouteOneDemoComponent } from './components/7-routes/routeone.component';
+import { RouteTwoDemoComponent } from './components/7-routes/routetwo.component';
+import { Routes, RouterModule } from '@angular/router';
+
+
+const route: Routes = [{
+  path: 'routeone', component: RouteOneDemoComponent
+}, {
+  path: 'routetwo', component: RouteTwoDemoComponent , children :[
+    {
+      path: 'innerrouteone', component: RouteOneDemoComponent, outlet: 'inner'
+    },{
+      path: 'innerroutetwo', component: RouteTwoDemoComponent, outlet: 'inner1'
+    }
+  ]
+}]
+
 
 @NgModule({
   declarations: [
@@ -27,13 +45,17 @@ import { AppErrorHandler } from './errors/app.error.handler';
     FilterPipe,
     HttpDemoComponent,
     InputFormatDirective,
-    PhoneDirective
+    PhoneDirective,
+    RouteDemoComponent,
+    RouteOneDemoComponent,
+    RouteTwoDemoComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AmexioWidgetModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(route)
   ],
   providers: [
     PostService,
