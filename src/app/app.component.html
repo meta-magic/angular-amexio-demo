@@ -1,7 +1,7 @@
 <amexio-label [size]="'large-bold'">{{title}}</amexio-label>
 
-<amexio-tab-view>
-    <amexio-tab title="1 Greetings" [active]="false">
+<amexio-tab-view #tab>
+    <amexio-tab title="1 Greetings" [active]="true">
         <!-- Greetings Demo with life cycle hooks -->
         <h3>Hello World with lifecycle hooks</h3>
         <button (click)="onClick()">toggle</button> <br />
@@ -17,7 +17,7 @@
         <h3>Inbuit and Custom Pipe</h3>
         <pipedemo></pipedemo>
     </amexio-tab>
-    <amexio-tab  title="Reusable Component">
+    <amexio-tab title="Reusable Component">
         <h3>Reusable Components - Input and Output</h3>
         <list-component (onClick)="onListClick($event)" [data]="employees" [display-field]="'name'">
             <ng-template #listtemplate let-row="row">
@@ -30,7 +30,7 @@
             </pre>
         </div>
     </amexio-tab>
-    <amexio-tab  title="Directive">
+    <amexio-tab title="Directive">
         <h3>Inbuilt directives</h3>
         <inbuilt-directive></inbuilt-directive>
     </amexio-tab>
@@ -40,8 +40,17 @@
     <amexio-tab title="Route-Demo">
         <route-demo></route-demo>
     </amexio-tab>
-    <amexio-tab title="Form" [active]="true">
+    <amexio-tab title="Form">
         <form-demo></form-demo>
+    </amexio-tab>
+    <amexio-tab title="Layouts">
+        <gridlayout-demo></gridlayout-demo>
+    </amexio-tab>
+    <amexio-tab title="Dynamic Tabs">
+        <amexio-button
+             [label]="'Dynamic Tab'"
+             [type]="'theme-color'" (onClick)="addNewTab(tab)">
+        </amexio-button>
     </amexio-tab>
 
 </amexio-tab-view>

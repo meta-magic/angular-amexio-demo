@@ -23,7 +23,7 @@
 {{empForm.valid}}
 
 
-<amexio-form [header]="true" [form-name]="templateform" [show-error]="true">
+<amexio-form [header]="true" [form-name]="'templateform'" [show-error]="true">
     <amexio-form-header>
         Amexio- Header
     </amexio-form-header>
@@ -43,7 +43,7 @@
 
     </amexio-form-body>
     <amexio-form-action>
-        <amexio-button [form-bind]="templateform" [label]="'Save'" [type]="'theme-color'" [tooltip]="'Save'"></amexio-button>
+        <amexio-button [form-bind]="'templateform'" [label]="'Save'" [type]="'theme-color'" [tooltip]="'Save'"></amexio-button>
     </amexio-form-action>
 </amexio-form>
 

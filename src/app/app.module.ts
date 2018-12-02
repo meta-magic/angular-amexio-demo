@@ -21,20 +21,21 @@ import { RouteTwoDemoComponent } from './components/7-routes/routetwo.component'
 import { Routes, RouterModule } from '@angular/router';
 import { RouteGaurd } from './components/7-routes/route.gaurd.component';
 import { FormDemoComponent } from './components/8-forms/form.component';
+import { GridLayoutDemo } from './components/10-layouts/gridlayout.component';
 
 
 const route: Routes = [{
-  path: 'routeone', component: RouteOneDemoComponent, canActivate : [RouteGaurd]
+  path: 'routeone', component: RouteOneDemoComponent, canActivate: [RouteGaurd]
 }, {
-  path: 'routetwo/:id/:id2', component: RouteTwoDemoComponent , children :[
+  path: 'routetwo/:id/:id2', component: RouteTwoDemoComponent, children: [
     {
       path: 'innerrouteone', component: RouteOneDemoComponent, outlet: 'inner'
-    },{
+    }, {
       path: 'innerroutetwo', component: RouteTwoDemoComponent, outlet: 'inner1'
     }
   ]
-},{
-  path: 'lazy', loadChildren : './components/9-lazy-loading/lazyload.module#LazyModule'
+}, {
+  path: 'lazy', loadChildren: './components/9-lazy-loading/lazyload.module#LazyModule'
 }]
 
 
@@ -53,7 +54,8 @@ const route: Routes = [{
     RouteDemoComponent,
     RouteOneDemoComponent,
     RouteTwoDemoComponent,
-    FormDemoComponent
+    FormDemoComponent,
+    GridLayoutDemo
   ],
   imports: [
     BrowserModule,
@@ -63,6 +65,7 @@ const route: Routes = [{
     ReactiveFormsModule,
     RouterModule.forRoot(route)
   ],
+  entryComponents: [GreetingsComponent],
   providers: [
     PostService,
     { provide: ErrorHandler, useClass: AppErrorHandler }

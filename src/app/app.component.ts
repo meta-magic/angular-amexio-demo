@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AmexioTabComponent } from 'amexio-ng-extensions';
+import { GreetingsComponent } from './components/1-greetings/greetings.component';
 
 @Component({
   selector: 'app-root',
@@ -26,6 +28,10 @@ export class AppComponent {
 
   onListClick(emp:Employee){
     this.emp = emp;
+  }
+
+  addNewTab(tab: AmexioTabComponent){
+    tab.addDynamicTab(' New Tab ','red', false,GreetingsComponent);
   }
 }
 
