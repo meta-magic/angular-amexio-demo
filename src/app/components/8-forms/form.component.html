@@ -1,0 +1,68 @@
+<h4>Template Form Demo </h4>
+<form #empForm="ngForm">
+    <amexio-row>
+        <amexio-column [size]="6">
+            <amexio-text-input [(ngModel)]="model.firstName" [allow-blank]="false" field-label="First Name" name="firstName"
+                place-holder="Please eneter first name" icon-feedback="true">
+            </amexio-text-input>
+        </amexio-column>
+        <amexio-column [size]="6">
+            <amexio-text-input [(ngModel)]="model.lastName" [allow-blank]="false" field-label="Last Name" name="lastName"
+                place-holder="Please eneter last name" icon-feedback="true">
+            </amexio-text-input>
+        </amexio-column>
+    </amexio-row>
+    <amexio-row>
+        <amexio-column [size]=12>
+            <amexio-button [disabled]="!empForm.valid" [label]="'Save'" [type]="'theme-color'" [tooltip]="'Save'">
+            </amexio-button>
+        </amexio-column>
+    </amexio-row>
+</form>
+{{model | json}}
+{{empForm.valid}}
+
+
+<amexio-form [header]="true" [form-name]="templateform" [show-error]="true">
+    <amexio-form-header>
+        Amexio- Header
+    </amexio-form-header>
+    <amexio-form-body>
+        <amexio-row>
+            <amexio-column [size]="6">
+                <amexio-text-input [(ngModel)]="model.firstName" [allow-blank]="false" field-label="First Name" name="firstName"
+                    place-holder="Please eneter first name" icon-feedback="true">
+                </amexio-text-input>
+            </amexio-column>
+            <amexio-column [size]="6">
+                <amexio-text-input [(ngModel)]="model.lastName" [allow-blank]="false" field-label="Last Name" name="lastName"
+                    place-holder="Please eneter last name" icon-feedback="true">
+                </amexio-text-input>
+            </amexio-column>
+        </amexio-row>
+
+    </amexio-form-body>
+    <amexio-form-action>
+        <amexio-button [form-bind]="templateform" [label]="'Save'" [type]="'theme-color'" [tooltip]="'Save'"></amexio-button>
+    </amexio-form-action>
+</amexio-form>
+
+<h4>Reactive Form Demo </h4>
+
+<form [formGroup]="employeeForm">
+    <amexio-row>
+        <amexio-column [size]="6">
+            <amexio-text-input formControlName="FirstName"  [allow-blank]="false" field-label="First Name" name="firstName"
+                place-holder="Please eneter first name" icon-feedback="true">
+            </amexio-text-input>
+        </amexio-column>
+        <amexio-column [size]="6">
+            <amexio-text-input formControlName="LastName"  [allow-blank]="false" field-label="Last Name" name="lastName"
+                place-holder="Please eneter last name" icon-feedback="true">
+            </amexio-text-input>
+        </amexio-column>
+    </amexio-row>
+
+</form>
+
+{{employeeForm.valid}}

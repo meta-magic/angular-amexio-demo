@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { AppComponent } from './app.component';
 import { AmexioWidgetModule } from 'amexio-ng-extensions';
 import { GreetingsComponent } from './components/1-greetings/greetings.component';
@@ -20,6 +20,7 @@ import { RouteOneDemoComponent } from './components/7-routes/routeone.component'
 import { RouteTwoDemoComponent } from './components/7-routes/routetwo.component';
 import { Routes, RouterModule } from '@angular/router';
 import { RouteGaurd } from './components/7-routes/route.gaurd.component';
+import { FormDemoComponent } from './components/8-forms/form.component';
 
 
 const route: Routes = [{
@@ -49,13 +50,15 @@ const route: Routes = [{
     PhoneDirective,
     RouteDemoComponent,
     RouteOneDemoComponent,
-    RouteTwoDemoComponent
+    RouteTwoDemoComponent,
+    FormDemoComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AmexioWidgetModule,
     HttpClientModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(route)
   ],
   providers: [
