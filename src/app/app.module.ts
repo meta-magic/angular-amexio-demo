@@ -33,6 +33,8 @@ const route: Routes = [{
       path: 'innerroutetwo', component: RouteTwoDemoComponent, outlet: 'inner1'
     }
   ]
+},{
+  path: 'lazy', loadChildren : './components/9-lazy-loading/lazyload.module#LazyModule'
 }]
 
 

@@ -15,7 +15,7 @@ export class BindingComponent {
     disabled : boolean = false;
 
     constructor() {
-        this.image = 'https://testapi.amexio.org/api/v5.3/assets/images/logos/amexio-logo.png'
+        this.image = 'https://testapi.amexio.org/api/v5.4/assets/images/logos/amexio-logo.png'
     }
 
     onClick($event){
