@@ -16,8 +16,7 @@ export class RouteDemoComponent implements OnInit{
     }
 
     navigate(link : string){
-        debugger;
-        this.route.navigate([link]);
+        this.route.navigate([link,'1','2']);
     }
 
 }

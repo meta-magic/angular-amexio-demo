@@ -1,4 +1,5 @@
 import { OnInit, Component } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
     selector : 'route-one',
@@ -8,8 +9,14 @@ import { OnInit, Component } from "@angular/core";
 })
 export class RouteOneDemoComponent implements OnInit{
 
-    ngOnInit(){
+    constructor(private rla: ActivatedRoute){
+        
+    }
 
+    ngOnInit(){
+        this.rla.queryParamMap.subscribe((params)=>{
+            console.log("****PARAMS****"+JSON.stringify(params));
+        })
 
     }
 }

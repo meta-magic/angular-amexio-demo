@@ -26,7 +26,7 @@ import { FormDemoComponent } from './components/8-forms/form.component';
 const route: Routes = [{
   path: 'routeone', component: RouteOneDemoComponent, canActivate : [RouteGaurd]
 }, {
-  path: 'routetwo', component: RouteTwoDemoComponent , children :[
+  path: 'routetwo/:id/:id2', component: RouteTwoDemoComponent , children :[
     {
       path: 'innerrouteone', component: RouteOneDemoComponent, outlet: 'inner'
     },{

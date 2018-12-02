@@ -1,4 +1,4 @@
 Route Demo <br/>
-<amexio-button [label]="'One'" [type]="'theme-color'" (onClick)="navigate('routeone')"></amexio-button> <br/><br/>
+<amexio-button  [label]="'One'" [type]="'theme-color'" routerLink="routeone" [queryParams]="{'id':'1123'}"></amexio-button> <br/><br/>
 <amexio-button [label]="'Two'" [type]="'theme-color'" (onClick)="navigate('routetwo')"></amexio-button> <br/><br/>
 <router-outlet></router-outlet>

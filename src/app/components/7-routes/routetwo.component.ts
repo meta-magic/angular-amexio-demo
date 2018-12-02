@@ -1,5 +1,5 @@
 import { OnInit, Component } from "@angular/core";
-import { Router } from "@angular/router";
+import { Router, ActivatedRoute } from "@angular/router";
 
 @Component({
     selector : 'route-two',
@@ -8,11 +8,14 @@ import { Router } from "@angular/router";
 export class RouteTwoDemoComponent implements OnInit{
 
     
-    constructor(private route : Router){
+    constructor(private rla : ActivatedRoute){
 
     }
 
     ngOnInit(){
+        this.rla.params.subscribe((params)=>{
+            console.log("****PARAMS****"+JSON.stringify(params));
+        })
 
     }
  
