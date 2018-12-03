@@ -26,6 +26,7 @@
               "src/styles.css",
               
               "node_modules/amexio-ng-extensions/styles/css/at-md-black.css",
+              "node_modules/amexio-chart-d3/lib/styles/amexio-chart-d3-components.css",
               "node_modules/font-awesome/css/font-awesome.css"
             ],
             "scripts": []

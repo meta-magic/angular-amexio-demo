@@ -22,7 +22,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { RouteGaurd } from './components/7-routes/route.gaurd.component';
 import { FormDemoComponent } from './components/8-forms/form.component';
 import { GridLayoutDemo } from './components/10-layouts/gridlayout.component';
-
+import { D3ChartComponent } from './components/11-d3-chart/d3chart.component';
+import { AmexioChartD3Module } from 'amexio-chart-d3';
 
 const route: Routes = [{
   path: 'routeone', component: RouteOneDemoComponent, canActivate: [RouteGaurd]
@@ -55,7 +56,8 @@ const route: Routes = [{
     RouteOneDemoComponent,
     RouteTwoDemoComponent,
     FormDemoComponent,
-    GridLayoutDemo
+    GridLayoutDemo,
+    D3ChartComponent
   ],
   imports: [
     BrowserModule,
@@ -63,6 +65,7 @@ const route: Routes = [{
     AmexioWidgetModule,
     HttpClientModule,
     ReactiveFormsModule,
+    AmexioChartD3Module,
     RouterModule.forRoot(route)
   ],
   entryComponents: [GreetingsComponent],

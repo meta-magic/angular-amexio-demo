@@ -1,7 +1,7 @@
 <amexio-label [size]="'large-bold'">{{title}}</amexio-label>
 
 <amexio-tab-view #tab>
-    <amexio-tab title="1 Greetings" [active]="true">
+    <amexio-tab title="1 Greetings" >
         <!-- Greetings Demo with life cycle hooks -->
         <h3>Hello World with lifecycle hooks</h3>
         <button (click)="onClick()">toggle</button> <br />
@@ -52,5 +52,7 @@
              [type]="'theme-color'" (onClick)="addNewTab(tab)">
         </amexio-button>
     </amexio-tab>
-
+    <amexio-tab title="D3 Chart Demo" [active]="true">
+        <d3-chart-demo></d3-chart-demo>
+    </amexio-tab>
 </amexio-tab-view>

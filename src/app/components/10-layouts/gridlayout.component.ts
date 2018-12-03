@@ -25,26 +25,20 @@ export class GridLayoutDemo {
      
 // Create Layout Configurations for Desktop / Mobile / Tablets
 createLayouts() {
-    this.gridDesktop = new GridConfig('Home', GridConstants.Desktop)
-      .addlayout(["gridheader1", "gridheader2", "gridheader3", "gridheader4"])
-      .addlayout(["gridtitle", "gridmain", "gridmain", "gridright1"])
-      .addlayout(["gridmenu", "gridmain", "gridmain", "gridright2"])
-      .addlayout(["gridmenu", "gridmain", "gridmain", "gridright3"]);
-
-      this.gridTablet = new GridConfig('Home', GridConstants.Tablet)
-      .addlayout(["gridheader1", "gridheader2", "gridheader3", "gridheader4"])
-      .addlayout(["gridmain", "gridmain", "gridmain", "gridmain"])
-      .addlayout(["gridtitle", "gridtitle", "gridright1", "gridright1"])
-      .addlayout(["gridmenu", "gridmenu", "gridright2", "gridright2"])
-      .addlayout(["gridright3", "gridright3", "gridright3", "gridright3"]);
-
-      this.gridMobile = new GridConfig('Home', GridConstants.Mobile)
-      .addlayout(["gridheader1", "gridheader2", "gridheader3", "gridheader4"])
-      .addlayout(["gridmain", "gridmain", "gridmain", "gridmain"])
-      .addlayout(["gridtitle", "gridtitle", "gridtitle", "gridtitle"])
-      .addlayout(["gridmenu", "gridmenu", "gridmenu", "gridmenu"])
-      .addlayout(["gridright1", "gridright1", "gridright1", "gridright1"])
-      .addlayout(["gridright2", "gridright2", "gridright2", "gridright2"])
-      .addlayout(["gridright3", "gridright3", "gridright3", "gridright3"]);
+    this.gridDesktop = new GridConfig('LayoutSample1', GridConstants.Desktop)
+    .addlayout(["gridmenu", "gridheader", "gridheader", "gridheader", "gridheader", "gridheader"])
+    .addlayout(["gridmenu", "gridmain", "gridmain", "gridmain", "gridright", "gridright"])
+    .addlayout(["gridfooter", "gridfooter", "gridfooter", "gridfooter", "gridright", "gridright"]);
+      this.gridTablet = new GridConfig('LayoutSample1', GridConstants.Tablet)
+      .addlayout(["gridmenu", "gridmenu", "gridheader", "gridheader", "gridheader", "gridheader"])
+      .addlayout(["gridmenu", "gridmenu", "gridmain", "gridmain", "gridright", "gridright"])
+      .addlayout(["gridmenu", "gridmenu", "gridmain", "gridmain", "gridright", "gridright"])
+      .addlayout(["gridmenu", "gridmenu", "gridfooter", "gridfooter", "gridfooter", "gridfooter"]);
+      this.gridMobile = new GridConfig('LayoutSample1', GridConstants.Mobile)
+      .addlayout(["gridheader", "gridheader", "gridheader", "gridheader", "gridheader", "gridheader"])
+      .addlayout(["gridmenu", "gridmenu", "gridmenu", "gridmenu", "gridmenu", "gridmenu"])
+      .addlayout(["gridmain", "gridmain", "gridmain", "gridmain", "gridmain", "gridmain"])
+      .addlayout(["gridright", "gridright", "gridright", "gridright", "gridright", "gridright"])
+      .addlayout(["gridfooter", "gridfooter", "gridfooter", "gridfooter", "gridfooter", "gridfooter"]);
   }
 }
