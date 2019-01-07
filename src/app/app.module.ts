@@ -24,6 +24,7 @@ import { FormDemoComponent } from './components/8-forms/form.component';
 import { GridLayoutDemo } from './components/10-layouts/gridlayout.component';
 import { D3ChartComponent } from './components/11-d3-chart/d3chart.component';
 import { AmexioChartD3Module } from 'amexio-chart-d3';
+import { CreditCardDirective } from './components/5-directives/creditcard.directive';
 
 const route: Routes = [{
   path: 'routeone', component: RouteOneDemoComponent, canActivate: [RouteGaurd]
@@ -51,6 +52,7 @@ const route: Routes = [{
     FilterPipe,
     HttpDemoComponent,
     InputFormatDirective,
+    CreditCardDirective,
     PhoneDirective,
     RouteDemoComponent,
     RouteOneDemoComponent,
